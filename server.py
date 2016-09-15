@@ -23,6 +23,7 @@ app.jinja_env.undefined = StrictUndefined
 # Run 'source secrets.sh in terminal'
 # Pass Google JS API key to render_template
 gkey = os.environ['GOOGLE_API_KEY']
+PORT = int(os.environ.get("PORT", 5000))
 
 
 @app.route('/')
@@ -103,4 +104,4 @@ if __name__ == "__main__":
     connect_to_db(app)
     # Use the DebugToolbar
     DebugToolbarExtension(app)
-    app.run(host='0.0.0.0')
+    app.run(host="0.0.0.0", port=PORT)
