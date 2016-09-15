@@ -7,10 +7,6 @@ from server import app
 import json
 from twilio.rest import TwilioRestClient
  
-# Run 'source secrets.sh in terminal
-# Get filepath for cronjob
-filepath = os.environ['FILE_PATH']
-
 # resto_list = [16609] # sample restaurant for testing scraper
 person_list = [2, 4, 6]  # limit search options to 4 and 6 people
 
@@ -101,7 +97,7 @@ def scrape_opentable(date_list, resto_list, person_list):
                 reservation_id = reservation_id + 1
 
     reservation_json = json.dumps(reservation_dict)
-    with open(filepath + 'seed/reservation_json.json', 'wb') as output:
+    with open('seed/reservation_json.json', 'wb') as output:
         output.write(reservation_json)
 
     return reservation_dict
@@ -116,7 +112,7 @@ def load_reservations():
     Reservation.query.delete()
 
     #open json file and convert to dictionary for looping over
-    reservation_dict = json.load(open(filepath + 'seed/reservation_json.json'))
+    reservation_dict = json.load(open('seed/reservation_json.json'))
 
     #loop over all items in dictionary to insert details to database
     for reservation_id, details in reservation_dict.items():
