@@ -123,11 +123,11 @@ class Yelp_Detail(db.Model):
 ##############################################################################
 # Helper functions
 
-def connect_to_db(app, db_uri="DATABASE_URL"):
+def connect_to_db(app, db_uri=None):
     """Connect the database to our Flask app."""
 
     # Configure to use our PstgreSQL database
-    app.config['SQLALCHEMY_DATABASE_URI'] = db_uri
+    app.config['SQLALCHEMY_DATABASE_URI'] = db_uri or 'postgres:///restaurants'
     db.app = app
     db.init_app(app)
 
