@@ -151,7 +151,7 @@ def load_reservations():
 if __name__ == "__main__":
     # User can work with database directly when run in interactive mode
     from server import app
-    connect_to_db(app)
+    connect_to_db(app, os.environ.get("DATABASE_URL"))
     print "Connected to DB."
 
     print arrow.utcnow().to('US/Pacific')
