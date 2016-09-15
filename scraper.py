@@ -11,11 +11,6 @@ from twilio.rest import TwilioRestClient
 # Get filepath for cronjob
 filepath = os.environ['FILE_PATH']
 
-#Get twilio tokens for text message
-account_sid = os.environ['TWILIO_ACCOUNT_SID']
-auth_token = os.environ['TWILIO_AUTH_TOKEN']
-client = TwilioRestClient(account_sid, auth_token)
-
 # resto_list = [16609] # sample restaurant for testing scraper
 person_list = [2, 4, 6]  # limit search options to 4 and 6 people
 
