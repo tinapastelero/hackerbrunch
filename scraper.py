@@ -94,6 +94,7 @@ def scrape_opentable(date_list, resto_list, person_list):
 
     for date in date_list:
         for resto in resto_list:
+            print resto
             for person in person_list:
                 url = 'http://opentable.com/opentables.aspx?t=rest&r=%i&d=%s%s&p=%i' % (resto, date, reservation_time, person)
                 reservation_times = scrape_reservation_times(url)  # call scrape_reservation_times function on URL

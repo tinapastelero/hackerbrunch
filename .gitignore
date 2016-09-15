@@ -6,3 +6,4 @@ secrets.sh
 crontab.txt
 .coverage
 .DS_Store
+heroku.txt
