@@ -122,7 +122,7 @@ class Yelp_Detail(db.Model):
 ##############################################################################
 # Helper functions
 
-def connect_to_db(app, db_uri="DATABASE_URL")
+def connect_to_db(app, db_uri="DATABASE_URL"):
     """Connect the database to our Flask app."""
 
     # Configure to use our PstgreSQL database
