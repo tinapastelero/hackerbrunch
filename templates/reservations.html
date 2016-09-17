@@ -28,11 +28,13 @@
         <td>Filter by Name<input id="myResto" type="text" class="form-control" onkeyup="myFilter()"></td>
       </tr>
     </tbody>
-  </table><br>
+  </table>
+  <br>
 </div>
 
 <!-- Row for tabs and table -->
 <div class='row'>
+
   <ul class="nav nav-tabs">
     <li class="active" id='myNum' onclick="clearNumVar(); myFilter();"><a href="#home">All Tables</a></li>
     <li id='myNum' onclick="setNumVar(2); myFilter();"><a href="#tablesfor2">Tables for 2</a></li>
@@ -103,23 +105,6 @@
 
 'use strict';
 
-// event listener to pass values to modal
-$('#notify').on('show.bs.modal', function(evt) {
-    var $modal = $(this), data = evt.relatedTarget.id;
-    var data_array = data.split(" "); 
-    var people = data_array.shift();
-    var opentable = data_array.shift();
-    var date = data_array.shift();
-    var restaurant = data_array.join(" ");
-    // pass values to modal for display
-    $modal.find('.data-restaurant').html(restaurant);
-    $modal.find('.data-date').html(date);
-    $modal.find('.data-people').html(people);
-    // pass values to hidden fields for form submission
-    $('#form-opentable').val(opentable);
-    $('#form-date').val(date);
-    $('#form-people').val(people);
-});
 
 // Listener for tabs
 $(document).ready(function(){
