@@ -11,7 +11,7 @@ def load_opentable():
     print "Loading Opentable data"
 
     #Delete all rows in table to reseed data every time this function is called
-    Opentable.query.delete()
+    # Opentable.query.delete()
 
     #Read the source file and insert data, use 'rU' so \r is read as line break
     for line in open('seed/opentable.csv', 'rU'):
@@ -34,7 +34,7 @@ def load_restaurants():
     print "Loading Restaurants"
 
     #Delete all rows in table to reseed data every time this function is called
-    Restaurant.query.delete()
+    # Restaurant.query.delete()
 
     #Read the source file and insert data, use 'rU' so \r is read as line break
     for line in open('seed/restaurants.csv', 'rU'):
@@ -68,7 +68,7 @@ def load_yelp_details():
     print "Loading Yelp Details"
 
     #Delete all rows in table to reseed data every time this function is called
-    Yelp_Detail.query.delete()
+    # Yelp_Detail.query.delete()
 
     yelp_dict = json.load(open('seed/yelp_data.json'))
 
@@ -105,7 +105,7 @@ if __name__ == "__main__":
     connect_to_db(app)
 
     # In case tables haven't been created, create them
-    db.create_all()
+    # db.create_all()
 
     # Import data for various tables
     load_opentable()

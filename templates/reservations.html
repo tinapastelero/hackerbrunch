@@ -61,7 +61,7 @@
   {% for reservation in reservations %}
   <tr class='reservation-entry'>
     <td>{{ reservation.date.strftime('%b %-d, %a') }}</td>
-    <td><a href='https://www.yelp.com/biz/{{ reservation.opentable.restaurants[0].yelp_details[0].yelp_id }}' target='_blank'>{{ reservation.opentable.name }}</a></td>
+    <td>{{ reservation.opentable.name }}</td>
     <td>{{ reservation.people }}</td>
     <td>
     <!-- clean up time string for looping over -->

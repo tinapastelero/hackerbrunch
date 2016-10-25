@@ -5,7 +5,6 @@ from bs4 import BeautifulSoup
 from model import *
 from server import app
 import json
-from twilio.rest import TwilioRestClient
  
 # resto_list = [16609] # sample restaurant for testing scraper
 person_list = [2, 4, 6]  # limit search options to 4 and 6 people
@@ -92,6 +91,7 @@ def scrape_opentable(date_list, resto_list, person_list):
         for resto in resto_list:
             for person in person_list:
                 url = 'http://opentable.com/opentables.aspx?t=rest&r=%i&d=%s%s&p=%i' % (resto, date, reservation_time, person)
+                print url
                 reservation_times = scrape_reservation_times(url)  # call scrape_reservation_times function on URL
                 reservation_dict[reservation_id] = [resto, date, person, reservation_times]  # add item to dictionary per URL
                 reservation_id = reservation_id + 1
