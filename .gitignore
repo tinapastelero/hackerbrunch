@@ -7,3 +7,4 @@ crontab.txt
 .coverage
 .DS_Store
 heroku.txt
+setup.txt

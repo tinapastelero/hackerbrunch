@@ -14,6 +14,7 @@ def restaurant_query():
     """Query database for restaurant IDs and return list of opentable IDs"""
 
     opentable_id = Opentable.get_all_opentable_ids()
+    print opentable_id
     resto_list = []
 
     for restaurant in opentable_id:
@@ -146,6 +147,7 @@ if __name__ == "__main__":
     # User can work with database directly when run in interactive mode
     from server import app
     connect_to_db(app, os.environ.get("DATABASE_URL"))
+    # connect_to_db(app) 
     print "Connected to DB."
 
     print arrow.utcnow().to('US/Pacific')

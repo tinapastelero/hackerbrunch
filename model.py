@@ -122,6 +122,7 @@ class Yelp_Detail(db.Model):
 ##############################################################################
 # Helper functions
 
+# def connect_to_db(app, db_uri="postgresql:///restaurants"):
 def connect_to_db(app, db_uri=None):
     """Connect the database to our Flask app."""
 
