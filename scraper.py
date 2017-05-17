@@ -14,7 +14,6 @@ def restaurant_query():
     """Query database for restaurant IDs and return list of opentable IDs"""
 
     opentable_id = Opentable.get_all_opentable_ids()
-    print opentable_id
     resto_list = []
 
     for restaurant in opentable_id:

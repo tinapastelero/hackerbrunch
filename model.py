@@ -2,6 +2,7 @@ from flask_sqlalchemy import SQLAlchemy
 import os
 
 db = SQLAlchemy()
+DATABASE_URL = os.environ.get("DATABASE_URL")
 
 ##############################################################################
 # Model definitions
@@ -123,7 +124,7 @@ class Yelp_Detail(db.Model):
 # Helper functions
 
 # def connect_to_db(app, db_uri="postgresql:///restaurants"):
-def connect_to_db(app, db_uri=None):
+def connect_to_db(app, db_uri=DATABASE_URL):
     """Connect the database to our Flask app."""
 
     # Configure to use our PstgreSQL database
